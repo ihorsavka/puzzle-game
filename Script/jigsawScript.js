@@ -72,10 +72,10 @@ function jigsaw(canvasID, imageID, rows,columns) {
 
         initializeNewGame();
     };
-    
+
     function initializeNewGame() {
 
-        // Set block 
+        // Set block
         BLOCK_WIDTH = Math.round(BLOCK_IMG_WIDTH / TOTAL_COLUMNS);
         BLOCK_HEIGHT = Math.round(BLOCK_IMG_HEIGHT / TOTAL_ROWS);
 
@@ -112,7 +112,7 @@ function jigsaw(canvasID, imageID, rows,columns) {
 
     };
 
-  
+
     function DrawGame() {
 
         clear(ctx);
@@ -137,7 +137,7 @@ function jigsaw(canvasID, imageID, rows,columns) {
 
             var randomX = randomXtoY(x1, x2, 2);
             var randomY = randomXtoY(0, y2, 2);
-       
+
             var imgBlock = new imageBlock(i, randomX, randomY);
 
             imageBlockList.push(imgBlock);
@@ -153,12 +153,12 @@ function jigsaw(canvasID, imageID, rows,columns) {
     }
 
     function drawLines() {
-       
-       ctx.strokeStyle = "#e9e9e9";
-        
+
+       ctx.strokeStyle = "#ffffff";
+
         ctx.lineWidth = 1;
         ctx.beginPath();
-        
+
         // draw verticle lines
         for (var i = 0; i <= TOTAL_COLUMNS; i++) {
             var x = BLOCK_WIDTH * i;
@@ -190,7 +190,7 @@ function jigsaw(canvasID, imageID, rows,columns) {
     }
 
     function drawImageBlock(imgBlock) {
-        
+
         drawFinalImage(imgBlock.no, imgBlock.x, imgBlock.y, BLOCK_WIDTH, BLOCK_HEIGHT);
     }
 
@@ -218,7 +218,7 @@ function jigsaw(canvasID, imageID, rows,columns) {
     var interval = null;
     var remove_width;
     var remove_height;
-    
+
     function OnFinished() {
 
         var audioElement = document.createElement('audio');
@@ -253,9 +253,9 @@ function jigsaw(canvasID, imageID, rows,columns) {
         } else {
 
             clearInterval(interval);
-           
+
             // Restart game
-            initializeNewGame(); 
+            initializeNewGame();
           //  alert("Congrats....");
 
         }
@@ -439,5 +439,3 @@ function jigsaw(canvasID, imageID, rows,columns) {
     }
 
 }
-
-
